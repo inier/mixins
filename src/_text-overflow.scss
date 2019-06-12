@@ -3,15 +3,21 @@
  * @param $substract  为预留区域百分比%，默认：0
  */
 @mixin text-overflow($line: 1, $substract: 0) {
-    overflow: hidden;
-    @if $line==1 {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 100% - $substract;
-    }
-    @else {
-        display: -webkit-box;
-        -webkit-line-clamp: $line;
-        -webkit-box-orient: vertical;
-    }
+  overflow: hidden;
+  @if $line==1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100% - $substract;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    // 强制换行所有字符，修复连续的长英文和数字等不换行的问题
+    word-break: break-all;
+  }
+}
+
+// 文字截断
+@mixin ellipsis($rows: 1, $substract: 0) {
+  @include text-overflow($rows, $substract);
 }

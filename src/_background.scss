@@ -1,0 +1,6 @@
+// 背景
+@mixin background($start: #ffffff, $end: #000000) {
+    background: $end;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($end)); /* Saf4+, Chrome */
+    background-image: linear-gradient($start, $end);
+}

@@ -2,50 +2,59 @@
  * @desc 字符串分隔
  */
 @function str-split($string, $delimiter: " ") {
-    $result: ();
-    $length: str-length($string);
-    @if str-length($delimiter)==0 {
-        @for $i from 1 through $length {
-            $result: append($result, str-slice($string, $i, $i));
-        }
-        @return $result;
+  $result: ();
+  $length: str-length($string);
+  @if str-length($delimiter) ==0 {
+    @for $i from 1 through $length {
+      $result: append($result, str-slice($string, $i, $i));
     }
-    $running: true;
-    $remaining: $string;
-    @while $running {
-        $index: str-index($remaining, $delimiter);
-        @if $index {
-            $slice: str-slice($remaining, 1, $index - 1);
-            $result: append($result, $slice);
-            $remaining: str-slice($remaining, $index+ str-length($delimiter));
-        }
-        @else {
-            $running: false;
-        }
+    @return $result;
+  }
+  $running: true;
+  $remaining: $string;
+  @while $running {
+    $index: str-index($remaining, $delimiter);
+    @if $index {
+      $slice: str-slice($remaining, 1, $index - 1);
+      $result: append($result, $slice);
+      $remaining: str-slice($remaining, $index + str-length($delimiter));
+    } @else {
+      $running: false;
     }
-    @return append($result, $remaining);
+  }
+  @return append($result, $remaining);
 }
-
 
 /**
  * @desc 字符串重复
  */
 @function str-repeat($string, $times) {
-    $result: "";
-    @for $i from 1 through $times {
-        $result: $result+ $string;
-    }
-    @return $result;
+  $result: "";
+  @for $i from 1 through $times {
+    $result: $result + $string;
+  }
+  @return $result;
 }
-
 
 /**
  * @desc 字符串替换
+ * Replace `$search` with `$replace` in `$string`
+ * @author Hugo Giraudel
+ * @link http://sassmeister.com/gist/1b4f2da5527830088e4d
+ * @param {String} $string - Initial string
+ * @param {String} $search - Substring to replace
+ * @param {String} $replace ('') - New value
+ * @return {String} - Updated string
  */
 @function str-replace($string, $search, $replace: "") {
-    $index: str-index($string, $search);
-    @if $index {
-        @return str-slice($string, 1, $index - 1)+ $replace+ str-replace(str-slice($string, $index+ str-length($search)), $search, $replace);
-    }
-    @return $string;
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
 }

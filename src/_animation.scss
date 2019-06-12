@@ -1,7 +1,13 @@
 @mixin animation($params) {
-    $name: first($params);
-    animation: $params;
-    @keyframes #{$name} {
-        @content
-    }
+  $name: first($params);
+  animation: $params;
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin transition($transition...) {
+  @if $enable-transitions {
+      transition: $transition;
+  }
 }
