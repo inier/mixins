@@ -1,0 +1,9 @@
+.ani- {
+  &-circle {
+    @include animation(ani-circle 1s linear infinite) {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

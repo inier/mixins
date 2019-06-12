@@ -1,0 +1,8 @@
+// 通用的Design Token
+@import "./basis/variables";
+// 公共scss mixins
+@import "./mixins";
+// 全局样式重置
+@import "./mixins/reset";
+// 动画
+@import "./animate";
