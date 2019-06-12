@@ -3,6 +3,6 @@
 // 公共scss mixins
 @import "./mixins";
 // 全局样式重置
-@import "./mixins/reset";
+@import "./basis/reset";
 // 动画
-@import "./animate";
+@import "./basis/animate";

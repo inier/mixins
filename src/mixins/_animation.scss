@@ -7,7 +7,5 @@
 }
 
 @mixin transition($transition...) {
-  @if $enable-transitions {
-      transition: $transition;
-  }
+  transition: $transition;
 }
