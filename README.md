@@ -2,6 +2,24 @@
 
 sass mixins，require `Sass ~> 3.3.0`
 
+**structure**
+├── src/           		# scss相关
+│   ├── basis/				# 基础文件目录
+│       ├── _animate.scss		 # animates
+│   	├── _ie.scss			 # ie兼容
+│       ├── _reset.scss 		 # 全局reset规则
+│   	├── _symbols.scss 		 # 全局symbols
+│   	└── _variables.scss  	 # 全局scss基础变量定义
+│
+│   ├── functions/		 	# function目录	 
+│	├── mixins/				# mixin目录
+│   ├── _functions.scss		# function目录的出口
+│   ├── _settings.scss		# 基础出口，包括基础变量和mixins
+│   ├── _default.scss		# 扩展出口，包括基础变量、mixins、reset和animate等
+│   └── mixins.scss		    # 1.1.5及之前版本的mixins出口，以后版本更换为_settings.scss，或单独引入基础变量和mixins
+│
+
+
 **utility**
 
 * [`prefix`](#prefix)
