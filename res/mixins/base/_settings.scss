@@ -1,0 +1,304 @@
+//
+//** 长安商城项目设定 **
+//## 本文件用于初始化长安商城项目的所有全局设置
+//
+//== 全局开关变量
+$lte7: false !default;
+$enable-flex: false !default;
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-gradients: true !default;
+$enable-transitions: false !default;
+$enable-hover-media-query: false !default;
+
+//== 全局尺寸
+$page-padding: 15px 10px !default;
+
+//-- layout
+$header-height: 45px !default;
+$bar-base-height: 45px !default;
+$footer-height: 50px 56px !default;
+
+//== Colors 全局颜色设定
+//-- 常用色板
+$std-1st: #fb4d1d !default;
+$std-2nd: #03a9f4 !default;
+
+$gray-base: #000 !default;
+$gray-darkest: #1f1f1f !default;
+$gray-darker: #282828 !default;
+$gray-dark: #333 !default;
+$gray-std: #666 !default;
+$gray-light: #999 !default;
+$gray-lighter: #cdcdcd !default;
+$gray-lightest: #e5e5e5 !default;
+$gray-lightest2: #eee !default;
+$gray-lightest3: #f5f5f5 !default;
+$gray-lightest4: #f9f9f9 !default;
+
+$gray-mask: rgba(0, 0, 0, 0.4);
+
+$white-std: #fff !default;
+
+//== 字体相关
+// Typography
+$font-family-mobile: tahoma, arial, roboto, 'Droid Sans', 'Helvetica Neue', 'Droid Sans Fallback', 'Heiti SC', sans-self !default;
+$font-family-pc: tahoma, arial, 'Helvetica Neue', 'Hiragino Sans GB', simsun, sans-self !default;
+$font-family-mobile-pc: tahoma, arial, roboto, 'Droid Sans', 'Helvetica Neue', 'Droid Sans Fallback', 'Heiti SC',
+    'Hiragino Sans GB', simsun, sans-self !default;
+
+$font-family-sans-serif: 'Helvetica Neue', helvetica, arial, sans-serif !default;
+$font-family-serif: georgia, 'Times New Roman', times, serif !default;
+$font-family-monospace: menlo, monaco, consolas, 'Courier New', monospace !default;
+
+$font-family-base: $font-family-sans-serif !default;
+
+//字号
+$font-size-root: 16px !default;
+$font-size-base: 0.75rem !default;
+
+//H1: 18px
+$font-size-xl: 1.125rem !default;
+//H2: 16px
+$font-size-lg: 1rem !default;
+//H3: 14px
+$font-size-md: 0.875rem !default;
+//H4: 13px
+$font-size-sm: 0.8125rem !default;
+//H5: 12px
+$font-size-xs: 0.75rem !default;
+//H6: 10px
+$font-size-xxs: 0.625rem !default;
+
+// 标准行高
+$line-height: 1.5 !default;
+$line-height-m: 1.8 !default;
+$line-height-s: 1.3 !default;
+$line-height-txt: 24px !default;
+$line-height-bar: 44px !default;
+//H1-LH:
+$line-height-xl: $line-height;
+//H2-LH:
+$line-height-lg: $line-height;
+//H3-LH:
+$line-height-md: $line-height;
+//H4-LH:
+$line-height-sm: $line-height;
+//H5-LH:
+$line-height-xs: $line-height;
+//H6-LH:
+$line-height-xxs: $line-height;
+
+//-- 头像
+$avatar-width: 60;
+$avatar-width-lg: 70;
+$avatar-width-s: 40;
+$avatar-width-tiled: 30;
+
+//== 按钮
+$btn-min-width: 62px;
+$btn-wrap-padding: 15px 10px;
+$btn-group-margin: 10px;
+$btn-hot-area: 7px;
+
+//-- 按钮大小
+$btn-size-xl: 56px;
+$btn-size-xl-text: 20px;
+$btn-size-lg: 49px;
+$btn-size-lg-text: 19px;
+$btn-size-md: 44px;
+$btn-size-md-text: 18px;
+$btn-size-sm: 30px;
+$btn-size-sm-text: 14px;
+$btn-size-xs: 24px;
+$btn-size-xs-text: 12px;
+
+// tile板块（各板块间上下、左右间距）
+$title-spacing-row: 0.625rem;
+$tile-spacing-col: 0.625rem;
+
+//== form
+$input-wrap-bg: #ebeced;
+$form-label-width: 95px;
+$form-textarea-height: 65px;
+$form-textarea-margin-top: 15px;
+$form-right-close-right: 125px;
+$form-left-input-padding-left: 115px;
+$form-right-input-padding-right: 150px;
+
+$list-thumb-width: 50px;
+$list-thumb-height: 50px;
+$list-thumb-width-s: 28px;
+$list-thumb-height-s: 28px;
+$list-img-width: 100px;
+$list-img-height: 68px;
+$list-icon-width: 40px;
+$list-icon-height: 40px;
+$list-img-margin: 10px 10px 10px 0;
+
+//-- border
+$border-radius-base: 0.25rem !default;
+$border-radius-xl: 0.625rem !default;
+$border-radius-lg: 0.3rem !default;
+$border-radius-xs: 0.2rem !default;
+$border-radius-max: 200px;
+
+//== 栅格系统
+$grid-gutter-width: 6px !default;
+
+//== tables
+$table-cell-padding: 0.75rem !default;
+$table-sm-cell-padding: 0.3rem !default;
+
+//== icons
+$icon-font-size: 14px !default;
+$icon-color: $gray-light;
+$icon-font-baseUrl: '../assets/fonts/iconfont.ttf' !default;
+
+$icon-unchecked: '\e644' !default;
+$icon-checked: '\e61c' !default;
+$icon-arrow: '\e60a' !default;
+$icon-arrow-right: '\e60a' !default;
+
+//== Z-Indexes
+// -------------------------------
+$z-index-placehold: -1;
+$z-index-img: 1;
+$z-index-switch: 2;
+$z-index-progress: 9;
+$z-index-tag: 9;
+$z-index-border: 10;
+$z-index-notice: 99;
+$z-index-tooltips: 99;
+$z-index-head: 100;
+$z-index-poptips: 999;
+$z-index-overlay: 9999;
+
+//== Transition
+$transition-in: all 0.3s ease-in;
+$transition-out: all 0.3s ease-out;
+
+//== Mixin used
+//设置一个默认的对齐方式
+$inline-block-alignment: top;
+
+//箭头链接
+$list-arrow-margin-b: 20px;
+
+@import '../configs';
+
+//-- 所用颜色定义
+$color-primary: $std-1st;
+$color-secondary: $std-2nd;
+
+//背景色
+$bg-color-body: $gray-lightest2;
+$bg-color-input: $gray-lightest2;
+$bg-color-positive: $color-secondary;
+$bg-color-mask: $gray-mask;
+$bg-color-list-item: $white-std;
+$bg-color-list-item-active: $gray-lightest4;
+$color-list-item-arrow: $gray-lighter;
+
+$active-bg: $gray-lightest;
+$active-opacity: 0.5;
+
+//边框、边线颜色
+$border-color: $gray-lighter;
+$abbr-border-color: $gray-light;
+
+//文字颜色
+$txt-color-body: $gray-dark;
+$txt-color-default: $gray-dark;
+$txt-color-white: $white-std;
+$txt-color-info-dark: $gray-std;
+$txt-color-info-light: $gray-light;
+$txt-color-muted: $gray-lighter;
+$txt-color-warning: lighten($color-secondary, 5%);
+$txt-color-highlight: lighten($color-primary, 10%);
+$txt-color-link: $gray-dark;
+$txt-color-feeds: darken($color-secondary, 10%);
+
+//** Global textual link color.
+$link-color: $gray-dark;
+//** Link hover color set via `darken()` function.
+$link-hover-color: lighten($link-color, 15%);
+//** Link hover decoration.
+$link-hover-decoration: none;
+
+//-- 按钮颜色
+$btn-border-color: $gray-light;
+$btn-color-primary: $color-primary;
+$btn-image-primary: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.5, $btn-color-primary),
+    to(darken($btn-color-primary, 2%))
+);
+//#e13404
+$btn-color-secondary: $color-secondary;
+$btn-image-secondary: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.5, $btn-color-secondary),
+    to(darken($btn-color-secondary, 2%))
+);
+//#0286c2
+$btn-color-mono: $white-std;
+$btn-image-mono: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.5, $btn-color-mono),
+    to(darken($btn-color-mono, 2%))
+);
+$btn-color-mono-text: $gray-dark;
+$btn-color-disabled: $gray-lightest;
+$btn-color-disabled-text: $gray-light;
+$btn-color-progress: $white-std;
+$btn-image-progress: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.5, $btn-color-mono),
+    to(darken($btn-color-mono, 2%))
+);
+$btn-color-progressed-text: $btn-color-secondary;
+$btn-image-progress-inner: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.5, lighten($btn-color-secondary, 2%)),
+    to($btn-color-secondary)
+);
+
+$btn-inblock-txt-color: rgba(255, 255, 255, 0.3);
+
+//-- 文字
+$font-size-h1: $font-size-xl;
+$font-size-h2: $font-size-lg;
+$font-size-h3: $font-size-md;
+$font-size-h4: $font-size-sm;
+$font-size-h5: $font-size-xs;
+$font-size-h6: $font-size-xxs;
+
+$font-size-title-lg: $font-size-h2;
+$font-size-title: $font-size-h3;
+$font-size-info: $font-size-h3;
+$font-size-sub: $font-size-h3;
+$font-size-tips: $font-size-h5;
+
+//button radius
+$btn-border-radius: $border-radius-base;
+$btn-border-radius-xl: $border-radius-xl;
+$btn-border-radius-lg: $border-radius-lg;
+$btn-border-radius-xs: $border-radius-xs;
+
+//table
+$table-bg: transparent !default;
+$table-bg-accent: $gray-lightest4 !default;
+$table-bg-hover: $gray-lightest3 !default;
+$table-bg-active: $table-bg-hover !default;
+$table-border-color: $gray-lighter !default;

@@ -1,0 +1,148 @@
+//支持移动端的细线
+@mixin hairline($type, $color, $offset) {
+    @if $type == single {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+        background-position: $offset 100%;
+    } @else if $type == double {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>"),
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+        background-position: $offset 100%, $offset 0;
+    }
+    background-repeat: no-repeat;
+}
+
+// 支持IOS8+ hairline
+@mixin hairline($color, $style: solid) {
+    @media (-webkit-min-device-pixel-ratio: 2) {
+        border: 0.5px $style $color;
+    }
+}
+
+//直线hairline
+$border-t: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.5, rgba(0, 0, 0, 0)),
+    color-stop(0.5, $border-color),
+    to($border-color)
+);
+$border-b: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.5, rgba(0, 0, 0, 0)),
+    color-stop(0.5, $border-color),
+    to($border-color)
+);
+$border-l: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    color-stop(0.5, rgba(0, 0, 0, 0)),
+    color-stop(0.5, $border-color),
+    to($border-color)
+);
+$border-r: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0.5, rgba(0, 0, 0, 0)),
+    color-stop(0.5, $border-color),
+    to($border-color)
+);
+@mixin border-hairline(
+    $border-color: $border-color,
+    $border-t: $border-t,
+    $border-r: $border-r,
+    $border-b: $border-b,
+    $border-l: $border-l
+) {
+    .border-t {
+        border-top: 1px solid $border-color;
+    }
+
+    .border-b {
+        border-bottom: 1px solid $border-color;
+    }
+
+    .border-l {
+        border-left: 1px solid $border-color;
+    }
+
+    .border-r {
+        border-right: 1px solid $border-color;
+    }
+
+    .border-tb {
+        border-top: $border-color 1px solid;
+        border-bottom: $border-color 1px solid;
+        background-image: none;
+    }
+
+    .border {
+        border: 1px solid $border-color;
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+        .border {
+            position: relative;
+            border: 0;
+        }
+        .border-t,
+        .border-b,
+        .border-l,
+        .border-r,
+        .border-tb {
+            border: 0;
+        }
+        .border-t {
+            background-position: left top;
+            background-image: $border-t;
+        }
+        .border-b {
+            background-position: left bottom;
+            background-image: $border-b;
+        }
+        .border-t,
+        .border-b,
+        .border-tb {
+            background-repeat: repeat-x;
+            -webkit-background-size: 100% 1px;
+        }
+        .border-tb {
+            background-image: $border-t, $border-b;
+            background-position: top, bottom;
+        }
+        .border-l {
+            background-position: left top;
+            background-image: $border-l;
+        }
+        .border-r {
+            background-position: right top;
+            background-image: $border-r;
+        }
+        .border-l,
+        .border-r {
+            background-repeat: repeat-y;
+            -webkit-background-size: 1px 100%;
+        }
+        .border::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: $border-t, $border-r, $border-b, $border-l;
+            -webkit-background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+            background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+            background-repeat: no-repeat;
+            background-position: top, right, bottom, left;
+            padding: 1px;
+            -webkit-box-sizing: border-box;
+            z-index: $z-index-border;
+            pointer-events: none;
+        }
+    }
+}

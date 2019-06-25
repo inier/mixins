@@ -1,0 +1,43 @@
+@mixin popbg($bg: #fff, $fontColor: #666) {
+    background-color: $bg;
+    color: $fontColor;
+}
+
+@mixin bgColor {
+    &.theme {
+        background-color: $themeColor;
+        color: #fff;
+    }
+    &.blue {
+        background-color: $colorBlue;
+        color: #fff;
+    }
+    &.red {
+        background-color: $colorRed;
+        color: #fff;
+    }
+    &.green {
+        background-color: $colorGreen;
+        color: #fff;
+    }
+    &.gold {
+        background-color: $colorGold;
+        color: #fff;
+    }
+    &.blue-l {
+        background-color: $colorBlueLight;
+        color: #fff;
+    }
+    &.purple {
+        background-color: $colorPurple;
+        color: #fff;
+    }
+    &.black {
+        background-color: $colorBlack;
+        color: #fff;
+    }
+    &.orange {
+        background-color: $colorOrange;
+        color: #fff;
+    }
+}

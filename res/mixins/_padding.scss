@@ -1,0 +1,51 @@
+@mixin tile-padding {
+    padding-left: nth($page-padding, 1);
+    padding-right: nth($page-padding, 1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    @media (max-width: 320px) {
+        padding-left: nth($page-padding, 2);
+        padding-right: nth($page-padding, 2);
+    }
+}
+
+@mixin tile-padding-left {
+    padding-left: nth($page-padding, 1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    @media (max-width: 320px) {
+        padding-left: nth($page-padding, 2);
+    }
+}
+
+@mixin tile-padding-right {
+    padding-right: nth($page-padding, 1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    @media (max-width: 320px) {
+        padding-right: nth($page-padding, 2);
+    }
+}
+
+@mixin no-padding {
+    margin-left: -(nth($page-padding, 1));
+    margin-right: -(nth($page-padding, 1));
+    @media (max-width: 320px) {
+        margin-left: -(nth($page-padding, 2));
+        margin-right: -(nth($page-padding, 2));
+    }
+}
+
+@mixin no-padding-left {
+    margin-left: -(nth($page-padding, 1));
+    @media (max-width: 320px) {
+        margin-left: -(nth($page-padding, 2));
+    }
+}
+
+@mixin no-padding-right {
+    margin-right: -(nth($page-padding, 1));
+    @media (max-width: 320px) {
+        margin-right: -(nth($page-padding, 2));
+    }
+}

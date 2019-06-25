@@ -1,0 +1,123 @@
+@import '../base/settings';
+@import 'css3';
+//
+// Mixins
+// --------------------------------------------------
+// General
+// --------------------------------------------------
+//== Utilities
+@import 'icon-font';
+@import 'type';
+@import 'image';
+@import 'label';
+@import 'responsive-visibility';
+@import 'resize';
+@import 'size';
+@import 'tab-focus';
+@import 'breakpoints';
+@import 'hover';
+@import 'hide-text';
+@import 'reset-text';
+@import 'text-emphasis';
+@import 'text-truncate';
+@import 'screen-reader';
+@import 'reset-filter';
+//== Components
+@import 'alert';
+@import 'buttons';
+@import 'pagination';
+@import 'list-group';
+@import 'nav-divider';
+@import 'forms';
+@import 'progress';
+@import 'table-row';
+//== Layout
+@import 'clearfix';
+@import 'center-block';
+@import 'inline-block';
+@import 'pulls';
+@import 'padding';
+//@import "navbar-align";
+@import 'grid-framework';
+@import 'grid';
+//== Skins
+@import 'background-variant';
+@import 'border-radius';
+@import 'hairline';
+@import 'gradients';
+//== Animate
+@import 'animate';
+
+// Misc
+// --------------------------------------------------
+@mixin placehold-img {
+    position: relative;
+    & > .txt,
+    & > span {
+        position: absolute;
+        z-index: $z-index-img;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+    }
+}
+
+@mixin img {
+    position: relative;
+    & > .con,
+    & > span {
+        z-index: $z-index-img;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+    }
+}
+
+@mixin avatar($size: $avatar-width) {
+    overflow: hidden;
+    width: #{$size}px;
+    height: #{$size}px;
+    -webkit-border-radius: $border-radius-max;
+    & > .con,
+    & > span {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        -webkit-border-radius: $border-radius-max;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+    }
+}
+
+@mixin arrowlink {
+    position: relative;
+    &::before {
+        font-size: 1rem;
+        position: absolute;
+        top: 0;
+        right: nth($page-padding, 1);
+        //top: 50%;
+        //margin-top: -1.375rem;
+        margin-right: -0.625rem;
+        content: $icon-arrow-right;
+        color: $color-list-item-arrow;
+
+        @include icons;
+        @media (max-width: 320px) {
+            right: nth($page-padding, 2);
+        }
+    }
+}
+
+// Center-align a block level element
+@mixin center-block() {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}

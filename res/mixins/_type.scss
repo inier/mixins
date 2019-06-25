@@ -1,0 +1,7 @@
+﻿//文字截断
+@mixin nowrap {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

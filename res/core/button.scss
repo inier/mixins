@@ -1,0 +1,168 @@
+$btnColors: (
+    (
+        name: 'theme',
+        color: $themeColor,
+        text: #fff,
+    ),
+    (
+        name: 'red',
+        color: $colorRed,
+        text: #fff,
+    ),
+    (
+        name: 'yellow',
+        color: $colorYellow,
+        text: #fff,
+    ),
+    (
+        name: 'gold',
+        color: $colorGold,
+        text: #2f2b29,
+    ),
+    (
+        name: 'blue',
+        color: $colorBlue,
+        text: #fff,
+    ),
+    (
+        name: 'green',
+        color: $colorGreen,
+        text: #fff,
+    ),
+    (
+        name: 'light-p',
+        color: $colorPurpleLight,
+        text: #fff,
+    ),
+    (
+        name: 'primary',
+        color: $colorBlue,
+        text: #fff,
+    ),
+    (
+        name: 'default',
+        color: $defaultColor,
+        text: #666,
+    ),
+    (
+        name: 'important',
+        color: $importantColor,
+        text: #fff,
+    ),
+    (
+        name: 'warn',
+        color: $warmColor,
+        text: #fff,
+    ),
+    (
+        name: 'black',
+        color: $colorBlack,
+        text: #fff,
+    ),
+    (
+        name: 'grey',
+        color: #6f6f7e,
+        text: #fff,
+    ),
+    (
+        name: 'wine',
+        color: #c42c94,
+        text: #fff,
+    )
+);
+
+.btn {
+    appearance: none;
+    background-color: #fff;
+    padding: 5px 24px;
+    border-radius: 3px;
+    transition: background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+    outline: none;
+    border: 0;
+    position: relative;
+    border: 1px solid transparent;
+
+    &.file-btn input {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+    &:active,
+    &.active {
+        outline: none;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    }
+    &.flat {
+        // border: none;
+        &.sm {
+            padding: 5px 10px;
+        }
+    }
+    &.btn-lg {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    @for $i from 1 through length($btnColors) {
+        $item: nth($btnColors, $i);
+
+        &.#{map-get($item, name)} {
+            $textColor: map-get($item, text);
+            @include btnFlat(map-get($item, color), $textColor);
+        }
+    }
+    &.default {
+        border-color: #ddd;
+    }
+    &.res {
+        width: 100%;
+    }
+    .btn-icon {
+        margin-right: 10px;
+    }
+    &.hola {
+        padding: 5px 28px;
+        border: 1px solid #fff;
+        background-color: transparent !important;
+        color: #fff;
+        box-shadow: 0;
+        @for $i from 1 through length($btnColors) {
+            $item: nth($btnColors, $i);
+
+            &.#{map-get($item, name)} {
+                $textColor: map-get($item, text);
+                @include btnHola(map-get($item, color));
+            }
+        }
+        &.default {
+            border-color: #d1d1d1;
+            color: #777;
+        }
+    }
+}
+
+.link-btn,
+.link {
+    color: $themeColor;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    &:hover {
+        border-color: $themeColor;
+    }
+}
+
+[class*='_btn'],
+[class*='-btn'] {
+    cursor: pointer;
+}
+
+.close-btn {
+    @include closeBtn(22px);
+}

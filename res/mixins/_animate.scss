@@ -1,0 +1,21 @@
+//@include ani-visible(opacity 0.3s ease-in 0.1s);
+//@include ani-hidden(opacity 0.3s ease-out);
+//@include ani-delay(0.4s, 0.7s);
+
+@mixin ani-visible($transition: $transition-in) {
+    visibility: visible;
+    opacity: 1;
+    @include transition($transition);
+}
+
+@mixin ani-hidden($transition: $transition-out) {
+    visibility: hidden;
+    opacity: 0;
+    @include transition($transition);
+}
+
+@mixin ani-delay($duration: 0.3s, $delay: 0.2s, $func: ease-in) {
+    transition-duration: $duration;
+    transition-timing-function: $func;
+    transition-delay: $delay;
+}

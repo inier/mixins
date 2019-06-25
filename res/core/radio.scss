@@ -1,0 +1,51 @@
+$cycleScale: 16px;
+$normalColor: #ccc;
+.uke-radio-container {
+    .group {
+        @include layout();
+        align-items: center;
+        // padding-left: $cycleScale;
+        .selectAllBtn {
+            margin-right: 10px;
+        }
+        .item {
+            $itemPaddingHeight: 10px;
+            padding: 5px $itemPaddingHeight;
+            position: relative;
+            margin-left: $cycleScale;
+            margin-right: 10px;
+            cursor: pointer;
+            min-width: 60px;
+            &.active {
+                .cycle {
+                    border-color: $themeColor;
+                    .unit {
+                        background-color: $themeColor;
+                        transform: scale(0.6);
+                    }
+                }
+            }
+            &:hover {
+                color: $themeColor;
+            }
+            .cycle {
+                position: absolute;
+                left: -$cycleScale;
+                width: $cycleScale;
+                height: $cycleScale;
+                border-radius: 50%;
+                top: 50%;
+                transform: translateY(-$cycleScale / 2);
+                border: 1px solid $normalColor;
+                overflow: hidden;
+                .unit {
+                    @include fill;
+                    transform: scale(0.4);
+                    background-color: $normalColor;
+                    border-radius: 50%;
+                    transition: all ease 0.2s;
+                }
+            }
+        }
+    }
+}

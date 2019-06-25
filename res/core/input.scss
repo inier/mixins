@@ -1,0 +1,116 @@
+// @import "../var.scss";
+
+$iconViewBgColor: $themeColor;
+
+.animate-input-title {
+    .input-group {
+        width: 100%;
+    }
+    .input-control {
+        &.has-val,
+        &.forcing {
+            .title {
+                font-size: 12px;
+                transform: translateY(-100%);
+            }
+        }
+        .title {
+            position: absolute;
+            bottom: 4px;
+        }
+    }
+}
+
+.input-verify {
+    display: flex;
+    &.error {
+        .form-control {
+            border-color: $colorRed;
+            background-color: $colorRed;
+        }
+    }
+    .form-control {
+        min-width: auto !important;
+        width: 80px;
+        text-align: center;
+    }
+    .option-btns {
+        display: flex;
+        // align-items: center;
+        ._btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10px;
+            background-color: #eee;
+            height: 100%;
+            font-size: 22px;
+        }
+    }
+}
+
+.input-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.2s ease, border 0.2s ease;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid rgba(155, 155, 155, 0.3);
+    &.has-icon {
+    }
+    &.forcing {
+        border-color: $themeColor;
+        .title {
+            color: $themeColor;
+        }
+    }
+    .input-con {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    .form-control {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        z-index: 1;
+        padding: 0;
+        height: 100%;
+        min-height: 30px;
+        box-shadow: none !important;
+        // margin-top: 4px;
+        &:focus {
+            background-color: transparent !important;
+        }
+        &::placeholder {
+            color: #ccc;
+        }
+    }
+    .input-group {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .title {
+        transition: all ease 0.2s;
+        font-size: 14px;
+        height: 22px;
+        min-width: 60px;
+        display: flex;
+        align-items: center;
+        color: #999;
+        .icon {
+            margin-right: 5px;
+        }
+        .text {
+            display: inline-block;
+        }
+
+        * {
+            -webkit-user-select: none !important;
+            -ms-user-select: none !important;
+            -moz-user-select: none !important;
+            user-select: none !important;
+        }
+        // @include layoutCenter();
+    }
+}

@@ -1,0 +1,165 @@
+@import 'settings';
+@import '../mixins/mixins';
+
+a {
+    color: $txt-color-link;
+}
+
+em {
+    color: $txt-color-highlight;
+}
+
+::-webkit-input-placeholder {
+    color: $txt-color-muted;
+}
+
+/**
+ * 文字
+ */
+h1,
+.h1 {
+    font-size: $font-size-h1;
+    @if $line-height-xl != $line-height {
+        line-height: $line-height-xl;
+    }
+}
+
+h2,
+.h2 {
+    font-size: $font-size-h2;
+    @if $line-height-lg != $line-height {
+        line-height: $line-height-lg;
+    }
+}
+
+h3,
+.h3 {
+    font-size: $font-size-h3;
+    @if $line-height-md != $line-height {
+        line-height: $line-height-md;
+    }
+}
+
+h4,
+.h4 {
+    font-size: $font-size-h4;
+    @if $line-height-sm != $line-height {
+        line-height: $line-height-sm;
+    }
+}
+
+h5,
+.h5,
+.txt-sub {
+    font-size: $font-size-h5;
+    @if $line-height-xs != $line-height {
+        line-height: $line-height-xs;
+    }
+}
+
+h6,
+.h6,
+.txt-tips {
+    font-size: $font-size-h6;
+    @if $line-height-xxs != $line-height {
+        line-height: $line-height-xxs;
+    }
+}
+
+.txt-default {
+    color: $txt-color-default;
+}
+
+.txt-white {
+    color: $txt-color-white;
+}
+
+.txt-info {
+    color: $txt-color-info-dark;
+}
+
+.txt-muted {
+    color: $txt-color-muted;
+}
+
+.txt-warning,
+.txt-red {
+    color: $txt-color-warning;
+}
+
+.txt-feeds {
+    color: $txt-color-feeds;
+}
+
+/* 同em */
+.txt-highlight {
+    color: $txt-color-highlight;
+}
+
+.txt-left {
+    text-align: left;
+}
+
+.txt-right {
+    text-align: right;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-justify {
+    text-align: justify;
+}
+
+.txt-justify-one {
+    overflow: hidden;
+    height: 24px;
+    text-align: justify;
+}
+
+.txt-justify-one::after {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    content: '';
+}
+
+/* 文字截断 */
+.nowrap {
+    @include nowrap;
+}
+
+.nowrap-flex {
+    display: -webkit-box;
+    overflow: hidden;
+    height: inherit;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    -webkit-box-flex: 1;
+}
+
+.nowrap-multi {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.nowrap-multi-3 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.blurry-text {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,13 @@
+﻿//-- inline-block
+// 提供一个跨浏览器的方法来实现`display:inline-block`
+@mixin inline-block($alignment: $inline-block-alignment) {
+    display: inline-block;
+    @if $alignment and $alignment != none {
+        vertical-align: $alignment;
+    }
+    @if ($lte7) {
+        *vertical-align: auto;
+        *display: inline;
+        *zoom: 1;
+    }
+}
