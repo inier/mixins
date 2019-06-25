@@ -169,3 +169,23 @@
         }
     }
 }
+
+@mixin breakpoint($point) {
+    @if $point==lg {
+        @include min-screen($breakpoint-lg) {
+            @content;
+        }
+    } @else if $point==md {
+        @include min-screen($breakpoint-md) {
+            @content;
+        }
+    } @else if $point==sm {
+        @include min-screen($breakpoint-sm) {
+            @content;
+        }
+    } @else if $point==xs {
+        @include min-screen($breakpoint-xs) {
+            @content;
+        }
+    }
+}

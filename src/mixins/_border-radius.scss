@@ -1,0 +1,20 @@
+// Border-radius
+@mixin border-radius($radius: $breakpoint-md) {
+    @if ($radius !=0) {
+        overflow: hidden;
+        border-radius: $btn-border-radius-lg;
+
+        @include max-screen($breakpoint-lg) {
+            border-radius: $btn-border-radius-lg;
+        }
+        @include max-screen($breakpoint-md) {
+            border-radius: $btn-border-radius;
+        }
+        @include max-screen($breakpoint-sm) {
+            border-radius: $btn-border-radius-sm;
+        }
+        @include max-screen($breakpoint-xs) {
+            border-radius: $btn-border-radius-xs;
+        }
+    }
+}

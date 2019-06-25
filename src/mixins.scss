@@ -1,3 +1,8 @@
+//## mixin定义
+//== 第三方mixins，常用库包括：
+//-- mixins-sass: https://github.com/inier/mixins
+//-- sassmagic: http://w3cplus.github.io/SassMagic/
+
 @import "functions";
 @import "./mixins/prefix";
 @import "./mixins/font";
@@ -21,4 +26,5 @@
 @import "./mixins/hairline";
 @import "./mixins/icons-svg";
 @import "./mixins/background";
+@import "./mixins/border-radius";
 @import "./mixins/type-cn";
