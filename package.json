@@ -2,7 +2,7 @@
   "name": "@ozo/mixins-sass",
   "version": "1.1.8",
   "description": "a sass mixins library",
-  "main": "src/index.scss",
+  "main": "src/mixins.scss",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
