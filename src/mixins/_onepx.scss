@@ -6,7 +6,7 @@
   $list: top bottom left right;
   $vaue: 1px solid $color;
   @if $color==0 {
-    $vaue: 0;
+    $vaue: 0 !important;
   }
   @if contain($list, $direction) {
     border-#{$direction}: $vaue;
@@ -120,9 +120,9 @@
 */
 @mixin onepx-scale($color, $direction: all, $pseudo: after, $radius: 1px) {
   $list: top bottom left right;
+  position: relative;
   @include _border($color, $direction, $radius);
   @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    position: relative;
     @include _border(0, $direction, $radius);
     @if $direction==all or $direction==radius {
       // overflow: hidden;
